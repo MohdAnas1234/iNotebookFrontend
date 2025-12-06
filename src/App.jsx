@@ -6,7 +6,7 @@ import About from './component/About';
 import NoteState from './context/notes/NoteState';
 import Alert from './component/Alert';
 import Signup from './component/Signup';
-import Login from './component/Login';
+import Login from './component/login';
 import { useState } from "react";
 
 function App() {
