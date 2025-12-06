@@ -4,7 +4,7 @@ import NoteContext from "./NotesContext";
 import { useState } from "react";
 
 const NoteState = (props) => {
-    const host = "http://localhost:5000"
+    const host = "https://inotebookbackend-x5pb.onrender.com"
 const notesInitial =[
 
 ]
@@ -20,8 +20,7 @@ const getNotes = async ()=>{
         method:'GET',
         headers:{
             'Content-type': 'application/json',
-                        
-           
+    
 
             "auth-token" :   localStorage.getItem("token")
         },
