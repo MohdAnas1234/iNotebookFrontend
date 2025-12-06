@@ -7,10 +7,15 @@ const Signup = (props) => {
   const handleSubmit = async (e) => {
         e.preventDefault();
        const {name,email,password,} = credentials;
+       if (password !== credentials.cpassword) {
+    props.showAlert("Passwords do not match!", "danger");
+    return;
+}
+
         const response = await fetch("https://inotebookbackend-x5pb.onrender.com/api/auth/createuser", {
           method: 'POST',
           headers: {
-                'Content-type': 'application/json',
+                'Content-Type': 'application/json',
             },
             
         body:JSON.stringify({name,email,password})
@@ -61,7 +66,7 @@ const Signup = (props) => {
                       <div className="mb-3">
                           <label htmlFor="cpassword"className="form-label">Confirm Password</label>
                           <input
-                              type="password" className="form-control" id="cpassword" autoComplete="new-password" onChange={onChange} name='epassword'minLength={5} required/>
+                              type="password" className="form-control" id="cpassword" autoComplete="new-password" onChange={onChange} name='cpassword'minLength={5} required/>
                       </div>
       
       
